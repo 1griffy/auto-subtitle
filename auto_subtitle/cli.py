@@ -31,7 +31,11 @@ def main():
     output_dir: str = args.pop("output_dir")
     output_srt: bool = args.pop("output_srt")
     srt_only: bool = args.pop("srt_only")
+    lang: str = args.pop("language")
+    
     os.makedirs(output_dir, exist_ok=True)
+    
+    args["language"] = lang
 
     if model_name.endswith(".en"):
         warnings.warn(
